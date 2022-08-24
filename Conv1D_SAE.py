@@ -8,7 +8,7 @@ import os
 
 
 # Data Load
-df = pd.read_csv('D:/Denoising/Autoencoder/Samsung.txt', sep = ',')
+df = pd.read_csv('D:/Denoising/Autoencoder/Conv1D_SAE/Samsung.txt', sep = ',')
 
 
 # Normalization
