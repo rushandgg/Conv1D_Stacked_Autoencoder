@@ -30,11 +30,7 @@ for i in range(len(df)-size+1):
     dff = df[i:end_idx]
     dff.reset_index(inplace = True)
     if len(dff)>=size:
-        for j in range(size):
-            stock_list2 = np.zeros(shape = 1)
-            stock_list2[0] = dff["Close"][j]
-            stock_list[j] = stock_list2
-            
+        for j in range(size):            
             total_stock_list[count][j][0] = dff["Close"][j]            
         count += 1
     print("{} / {}".format(i+1, len(total_stock_list)))
@@ -101,7 +97,7 @@ fig, axs = plt.subplots(4,4, figsize=(13,10))
 index = 0
 for i in range(4):
     for j in range(4):
-        axs[i,j].plot(x_train_pred[index], marker='.', c ='blue', label = 'Pred_Data')
+        axs[i,j].plot(x_train_pred[index], marker='.', c ='blue', label = 'Denoised_Data')
         axs[i,j].plot(x_train[index], marker='.', c ='red', label = 'Ori_Data')
         index += 50
         #print(index)
